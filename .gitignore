@@ -1,0 +1,7 @@
+/Dist-Zilla-Plugin-Stenciller-HtmlExamples-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
+/.prove
