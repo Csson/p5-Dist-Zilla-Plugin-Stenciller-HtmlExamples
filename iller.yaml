@@ -9,6 +9,7 @@ prereqs:
     requires:
       - perl: 5.014000
       - Stenciller: 0.1212
+      - Dist::Zilla::File::InMemory
   test:
     requires:
      - Test::DZil
