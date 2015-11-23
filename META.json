@@ -4,7 +4,7 @@
       "Erik Carlsson <info@code301.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.031, CPAN::Meta::Converter version 2.143240",
+   "generated_by" : "Dist::Zilla version 5.041, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],
@@ -15,13 +15,13 @@
    "name" : "Dist-Zilla-Plugin-Stenciller-HtmlExamples",
    "no_index" : {
       "directory" : [
-         "t",
-         "xt",
-         "inc",
-         "share",
          "eg",
          "examples",
-         "t/corpus"
+         "inc",
+         "share",
+         "t",
+         "t/corpus",
+         "xt"
       ]
    },
    "prereqs" : {
@@ -92,7 +92,7 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::File::InMemory" : "0",
-            "Stenciller" : "0.1300",
+            "Stenciller" : "0.1301",
             "perl" : "5.014000"
          }
       },
@@ -117,7 +117,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Stenciller::HtmlExamples" : {
          "file" : "lib/Dist/Zilla/Plugin/Stenciller/HtmlExamples.pm",
-         "version" : "0.0001"
+         "version" : "0.0101"
       }
    },
    "release_status" : "stable",
@@ -132,6 +132,6 @@
          "web" : "https://github.com/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples"
       }
    },
-   "version" : "0.0001"
+   "version" : "0.0101"
 }
 

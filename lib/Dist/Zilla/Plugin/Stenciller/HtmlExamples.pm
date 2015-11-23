@@ -38,6 +38,15 @@ package Dist::Zilla::Plugin::Stenciller::HtmlExamples {
         coerce => 1,
         default => sub { shift->source_directory->child('template.html')->absolute },
     );
+    has output_also_as_html => (
+        is => 'ro',
+        isa => Bool,
+        default => 0,
+    );
+    has separator => (
+        is => 'ro',
+        isa => Maybe[Str],
+    );
 
     sub gather_files {
         my $self = shift;
@@ -48,7 +57,20 @@ package Dist::Zilla::Plugin::Stenciller::HtmlExamples {
         $self->log('Generating from stencils');
 
         foreach my $file (@source_files) {
-            my $contents = Stenciller->new(filepath => $file->stringify)->transform(plugin_name => 'ToHtmlPreBlock', transform_args => { require_in_extra => { key => 'is_html_example', value => 1, default => 1 }});
+            my $contents = Stenciller->new(filepath => $file->stringify)->transform(
+                plugin_name => 'ToHtmlPreBlock',
+                constructor_args => {
+                    output_also_as_html => $self->output_also_as_html,
+                    separator => $self->separator,
+                },
+                transform_args => {
+                    require_in_extra => {
+                        key => 'is_html_example',
+                        value => 1,
+                        default => 1,
+                    },
+                },
+            );
             my $all_contents = $template;
             $all_contents =~ s{\[STENCILS\]}{$contents};
             my $new_filename = $file->basename(qr/\.[^.]+$/) . '.html';

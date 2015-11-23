@@ -27,6 +27,7 @@ my $tzil = Builder->from_config(
                     file_pattern => '.+\.stencil',
                     output_directory => 'example',
                     template_file => 't/corpus/template.html',
+                    output_also_as_html => 1,
                 }],
             )
         }
@@ -54,6 +55,7 @@ sub expected_html {
 
         <pre>&lt;% badge &#39;3&#39; %&gt;</pre>
         <pre>&lt;span class=&quot;badge&quot;&gt;3&lt;/span&gt;</pre>
+        <p>    <span class="badge">3</span></p>
                 </div>
             </body>
         </html>
