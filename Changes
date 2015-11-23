@@ -8,18 +8,23 @@ Revision history for Dist-Zilla-Plugin-Stenciller-HtmlExamples
  [Documentation]
 
  [Enhancements]
- - Added support for new attributes in Stenciller::Plugin::ToHtmlPreBlock.
 
  [Meta]
 
  [New Features]
 
  [Requirements]
- - Bump Stenciller requirement to 0.1301.
 
  [Revision]
 
  [Testing]
+
+0.0101 2015-11-23T15:27:02Z UTC
+ [Enhancements]
+ - Added support for new attributes in Stenciller::Plugin::ToHtmlPreBlock.
+
+ [Requirements]
+ - Bump Stenciller requirement to 0.1301.
 
 0.0100 2015-11-23T00:33:45Z UTC
  - Initial release
