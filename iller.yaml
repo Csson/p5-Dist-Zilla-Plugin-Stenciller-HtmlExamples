@@ -8,7 +8,7 @@ prereqs:
   runtime:
     requires:
       - perl: 5.014000
-      - Stenciller: 0.1212
+      - Stenciller: 0.1300
       - Dist::Zilla::File::InMemory
   test:
     requires:
@@ -16,13 +16,20 @@ prereqs:
      - Test::Differences
      - Path::Tiny
      - File::Temp
+     - Syntax::Feature::Qi
+     - syntax
+     - String::Cushion
 
 plugins:
   - +config: Author::CSSON
 
+  - +extend_plugin: MetaNoIndex
+    directory:
+      - t/corpus
+
   - +add_plugin: TravisYML
     +before: Git::Tag
-    perl_version: 5.14 5.16
+    perl_version: 5.14 5.16 5.20
 
 ---
 doctype: weaver

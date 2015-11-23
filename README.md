@@ -1,58 +1,12 @@
 # NAME
 
-Dist::Zilla::Plugin::Stenciller::HtmlExamples - Short intro
+Dist::Zilla::Plugin::Stenciller::HtmlExamples - Create Html example files from text files parsed with Stenciller
 
-![Requires Perl 5.14+](https://img.shields.io/badge/perl-5.14+-brightgreen.svg) [![Travis status](https://api.travis-ci.org//.svg?branch=master)](https://travis-ci.org//)
+![Requires Perl 5.14+](https://img.shields.io/badge/perl-5.14+-brightgreen.svg) [![Travis status](https://api.travis-ci.org/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples.svg?branch=master)](https://travis-ci.org/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples)
 
 # VERSION
 
-Version 0.0001, released 2015-11-22.
-
-class Dist::Zilla::Plugin::Stenciller::HtmlExamples with Dist::Zilla::Role::BeforeBuild using Moose {
-
-    # VERSION
-
-    has source_directory => (
-        is => 'ro',
-        isa => Dir,
-        coerce => 1,
-        default => 'examples/source',
-    );
-    has file_pattern => (
-        is => 'ro',
-        isa => Str,
-        default => '.+\.stencil',
-    );
-    has output_directory => (
-        is => 'ro',
-        isa => Dir,
-        coerce => 1,
-        default => 'examples',
-    );
-    has template_file => (
-        is => 'ro',
-        isa => AbsFile,
-        lazy => 1,
-        coerce => 1,
-        default => sub { shift->source_directory->child('template.html')->absolute },
-    );
-
-    method before_build {
-        my $template = $self->template_file->slurp_utf8;
-        my @source_files = $self->source_directory->children(qr{^@{[ $self->file_pattern ]}$});
-
-        $self->log('Generating from stencils');
-
-        foreach my $file (@source_files) {
-            my $contents = Stenciller->new(filepath => $file->stringify)->transform(plugin_name => 'ToHtmlPreBlock', transform_args => { require_in_extra => { key => 'is_html_example', value => 1, default => 1 }});
-            my $all_contents = $template;
-            $all_contents =~ s{\[STENCILS\]}{$contents};
-            my $new_filename = $file->basename(qr/\.[^.]+$/) . '.html';
-            $self->log("Generated $new_filename");
-            $self->output_directory->child($new_filename)->spew_utf8($all_contents);
-        }
-    }
-}
+Version 0.0001, released 2015-11-23.
 
 # SYNOPSIS
 
@@ -67,10 +21,10 @@ class Dist::Zilla::Plugin::Stenciller::HtmlExamples with Dist::Zilla::Role::Befo
 # DESCRIPTION
 
 Dist::Zilla::Plugin::Stenciller::HtmlExamples uses [Stenciller](https://metacpan.org/pod/Stenciller) and [Stenciller::Plugin::ToHtmlPreBlock](https://metacpan.org/pod/Stenciller::Plugin::ToHtmlPreBlock) to turn
-stencil files in `source_directory` matching the `file_pattern` into
+stencil files in `source_directory` (that matches the `file_pattern`) into
 html example files in `output_directory` by applying the `template_file`.
 
-Note that this plugin is run in the **before build** phase: The generated files are created on disk.
+This [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) plugin does the `FileGatherer` role.
 
 # ATTRIBUTES
 
@@ -89,14 +43,18 @@ will have the same basename, but the suffix is replaced by `html`.
 
 ## template\_file
 
-The template file is an ordinary html file, with one exception. The first occurence of `[STENCILS]` will be replaced with the
-string returned from [Stenciller::Plugin::ToHtmlPreBlock](https://metacpan.org/pod/Stenciller::Plugin::ToHtmlPreBlock). This is done once for every source file, so if you have five files matching `file_pattern`,
-you will have five example files.
+The template file is an ordinary html file, with one exception: The first occurence of `[STENCILS]` will be replaced with the
+string returned from [Stenciller::Plugin::ToHtmlPreBlock](https://metacpan.org/pod/Stenciller::Plugin::ToHtmlPreBlock). The template file is applied to each stencil file, so the number of generated example files is equal
+to the number of stencil files.
 
 # SEE ALSO
 
 - [Stenciller](https://metacpan.org/pod/Stenciller)
 - [Stenciller::Plugin::ToHtmlPreBlock](https://metacpan.org/pod/Stenciller::Plugin::ToHtmlPreBlock)
+
+# SOURCE
+
+[https://github.com/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples](https://github.com/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples)
 
 # HOMEPAGE
 

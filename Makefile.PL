@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Short intro",
+  "ABSTRACT" => "Create Html example files from text files parsed with Stenciller",
   "AUTHOR" => "Erik Carlsson <info\@code301.com>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
@@ -22,7 +22,7 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::Plugin::Stenciller::HtmlExamples",
   "PREREQ_PM" => {
     "Dist::Zilla::File::InMemory" => 0,
-    "Stenciller" => "0.1212"
+    "Stenciller" => "0.1300"
   },
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
@@ -49,7 +49,7 @@ my %FallbackPrereqs = (
   "File::Spec" => 0,
   "File::Temp" => 0,
   "Path::Tiny" => 0,
-  "Stenciller" => "0.1212",
+  "Stenciller" => "0.1300",
   "String::Cushion" => 0,
   "Syntax::Feature::Qi" => 0,
   "Test::DZil" => 0,
