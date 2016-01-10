@@ -13,6 +13,7 @@ prereqs:
       - syntax
       - Syntax::Feature::Qs: 0.2004
       - String::Stomp
+      - MooseX::AttributeDocumented
 
   test:
     requires:

@@ -96,6 +96,7 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::File::InMemory" : "0",
+            "MooseX::AttributeDocumented" : "0",
             "Stenciller" : "0.1302",
             "String::Stomp" : "0",
             "Syntax::Feature::Qs" : "0.2004",
