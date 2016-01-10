@@ -14,7 +14,6 @@ use Dist::Zilla::Plugin::Stenciller::HtmlExamples;
 
 ok 1;
 
-
 my $tzil = Builder->from_config(
     {   dist_root => 't/corpus' },
     {   add_files => {
