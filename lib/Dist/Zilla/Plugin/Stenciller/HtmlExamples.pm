@@ -13,23 +13,52 @@ package Dist::Zilla::Plugin::Stenciller::HtmlExamples {
     use Types::Stenciller -types;
     use Path::Tiny;
     use Dist::Zilla::File::InMemory;
+    use String::Stomp;
+    use syntax 'qs';
+
+    has '+zilla' => (
+        traits => ['Documented'],
+        documentation_order => 0,
+    );
+    has '+plugin_name' => (
+        traits => ['Documented'],
+        documentation_order => 0,
+    );
+    has '+logger' => (
+        traits => ['Documented'],
+        documentation_order => 0,
+    );
 
     has source_directory => (
         is => 'ro',
         isa => Dir,
         coerce => 1,
         default => 'examples/source',
+        traits => ['Documented'],
+        documentation => 'Path to where the stencil files are.',
+        documentation_order => 1,
     );
     has file_pattern => (
         is => 'ro',
         isa => Str,
         default => '.+\.stencil',
+        traits => ['Documented'],
+        documentation => stomp qs{
+            This is used as a part of a regular expression (so do not use start and end anchors) to find stencil files in the C<source_directory>.
+        },
+        documentation_order => 3,
     );
     has output_directory => (
         is => 'ro',
         isa => Path,
         coerce => 1,
         default => 'examples',
+        traits => ['Documented'],
+        documentation => stomp qs{
+            Path to where the generated files are saved.  The output files
+            will have the same basename as the stencil they are based on, but with the suffix replaced by C<html>. 
+        },
+        documentation_order => 2,
     );
     has template_file => (
         is => 'ro',
@@ -37,15 +66,28 @@ package Dist::Zilla::Plugin::Stenciller::HtmlExamples {
         lazy => 1,
         coerce => 1,
         default => sub { shift->source_directory->child('template.html')->absolute },
+        traits => ['Documented'],
+        documentation => stomp qs{
+            The template file should be an html file. The first occurence of C<[STENCILS]> will be replaced with the output from L<Stenciller::Plugin::ToHtmlPreBlock>
+            for each stencil.
+        },
+        documentation_default => q{'template.html' in L</source_directory>},
+        documentation_order => 4,
+    );
+    has separator => (
+        is => 'ro',
+        isa => Maybe[Str],
+        traits => ['Documented'],
+        documentation => q{Passed on to the L<Stenciller::Plugin::ToHtmlPreBlock> constructor.},
+        documentation_order => 5,
     );
     has output_also_as_html => (
         is => 'ro',
         isa => Bool,
         default => 0,
-    );
-    has separator => (
-        is => 'ro',
-        isa => Maybe[Str],
+        traits => ['Documented'],
+        documentation => q{Passed on to the L<Stenciller::Plugin::ToHtmlPreBlock> constructor.},
+        documentation_order => 6,
     );
 
     sub gather_files {
@@ -93,6 +135,8 @@ __END__
 
 =pod
 
+:splint classname Dist::Zilla::Plugin::Stenciller::HtmlExamples
+
 =head1 SYNOPSIS
 
     ; in dist.ini
@@ -102,6 +146,7 @@ __END__
     output_directory = examples
     template_file = examples/source/template.html
     file_pattern = .+\.stencil
+    output_also_as_html = 0
 
 =head1 DESCRIPTION
 
@@ -113,24 +158,7 @@ This L<Dist::Zilla> plugin does the C<FileGatherer> role.
 
 =head1 ATTRIBUTES
 
-=head2 source_directory
-
-Path to where the stencil files are.
-
-=head2 output_directory
-
-Path to where the generated files are saved.
-
-=head2 file_pattern
-
-This is put inside a regular expression (with start and end anchors) to find stencil files in the C<source_directory>. The output files
-will have the same basename, but the suffix is replaced by C<html>. 
-
-=head2 template_file
-
-The template file is an ordinary html file, with one exception: The first occurence of C<[STENCILS]> will be replaced with the
-string returned from L<Stenciller::Plugin::ToHtmlPreBlock>. The template file is applied to each stencil file, so the number of generated example files is equal
-to the number of stencil files.
+:splint attributes
 
 =head1 SEE ALSO
 

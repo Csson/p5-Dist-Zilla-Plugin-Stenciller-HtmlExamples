@@ -6,7 +6,7 @@ Dist::Zilla::Plugin::Stenciller::HtmlExamples - Create Html example files from t
 
 # VERSION
 
-Version 0.0101, released 2015-11-23.
+Version 0.0102, released 2016-01-10.
 
 # SYNOPSIS
 
@@ -17,6 +17,7 @@ Version 0.0101, released 2015-11-23.
     output_directory = examples
     template_file = examples/source/template.html
     file_pattern = .+\.stencil
+    output_also_as_html = 0
 
 # DESCRIPTION
 
@@ -30,22 +31,15 @@ This [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) plugin does the `FileGa
 
 ## source\_directory
 
-Path to where the stencil files are.
-
 ## output\_directory
-
-Path to where the generated files are saved.
 
 ## file\_pattern
 
-This is put inside a regular expression (with start and end anchors) to find stencil files in the `source_directory`. The output files
-will have the same basename, but the suffix is replaced by `html`. 
-
 ## template\_file
 
-The template file is an ordinary html file, with one exception: The first occurence of `[STENCILS]` will be replaced with the
-string returned from [Stenciller::Plugin::ToHtmlPreBlock](https://metacpan.org/pod/Stenciller::Plugin::ToHtmlPreBlock). The template file is applied to each stencil file, so the number of generated example files is equal
-to the number of stencil files.
+## separator
+
+## output\_also\_as\_html
 
 # SEE ALSO
 
