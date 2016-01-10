@@ -2,9 +2,20 @@
 == stencil ==
 
 --input--
-    <% badge '3' %>
+    <%= badge '1' %>
 --end input--
 
 --output--
-    <span class="badge">3</span>
+    <span class="badge">1</span>
+--end output--
+
+
+== stencil ==
+
+--input--
+    <%= badge '2' %>
+--end input--
+
+--output--
+    <span class="badge">2</span>
 --end output--

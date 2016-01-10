@@ -28,6 +28,7 @@ my $tzil = Builder->from_config(
                     output_directory => 'example',
                     template_file => 't/corpus/template.html',
                     output_also_as_html => 1,
+                    separator => '<hr />',
                 }],
             )
         }
@@ -53,9 +54,13 @@ sub expected_html {
 
 
 
-        <pre>&lt;% badge &#39;3&#39; %&gt;</pre>
-        <pre>&lt;span class=&quot;badge&quot;&gt;3&lt;/span&gt;</pre>
-        <p>    <span class="badge">3</span></p>
+        <pre>&lt;%= badge &#39;1&#39; %&gt;</pre>
+        <pre>&lt;span class=&quot;badge&quot;&gt;1&lt;/span&gt;</pre>
+        <div>    <span class="badge">1</span></div>
+        <hr />
+        <pre>&lt;%= badge &#39;2&#39; %&gt;</pre>
+        <pre>&lt;span class=&quot;badge&quot;&gt;2&lt;/span&gt;</pre>
+        <div>    <span class="badge">2</span></div>
                 </div>
             </body>
         </html>
