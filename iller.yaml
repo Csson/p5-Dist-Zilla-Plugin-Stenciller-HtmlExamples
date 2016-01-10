@@ -8,8 +8,12 @@ prereqs:
   runtime:
     requires:
       - perl: 5.014000
-      - Stenciller: 0.1301
+      - Stenciller: 0.1302
       - Dist::Zilla::File::InMemory
+      - syntax
+      - Syntax::Feature::Qs: 0.2004
+      - String::Stomp
+
   test:
     requires:
      - Test::DZil
@@ -27,15 +31,12 @@ plugins:
     directory:
       - t/corpus
 
-  - +add_plugin: TravisYML
-    +before: Git::Tag
-    perl_version: 5.14 5.16 5.20
-
 ---
 doctype: weaver
 
 plugins:
   - +config: Author::CSSON
+    splint: 1
 
   - +extend_plugin: Splint
     type_libraries: Types::Stenciller=Stencil,Stenciller
