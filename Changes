@@ -12,13 +12,19 @@ Revision history for Dist-Zilla-Plugin-Stenciller-HtmlExamples
  [New Features]
 
  [Other Changes]
-  - No longer uses block package syntax, so should work on 5.10+ (once Stenciller does).
 
  [Requirements]
-  - New prereq: namespace::autoclean.
-  - Added missing prereqs: Moose, Path::Tiny.
 
  [Testing]
+
+0.0200 2016-01-27T18:29:46Z UTC
+ [Other Changes]
+ - No longer uses block package syntax, so should work on 5.10+ (once
+   Stenciller does).
+
+ [Requirements]
+ - New prereq: namespace::autoclean.
+ - Added missing prereqs: Moose, Path::Tiny.
 
 0.0102 2016-01-10T15:34:21Z UTC
  [Bug Fixes]

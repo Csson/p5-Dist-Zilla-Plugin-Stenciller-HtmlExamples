@@ -6,7 +6,7 @@ Dist::Zilla::Plugin::Stenciller::HtmlExamples - Create Html example files from t
 
 # VERSION
 
-Version 0.0103, released 2016-01-27.
+Version 0.0200, released 2016-01-27.
 
 # SYNOPSIS
 
