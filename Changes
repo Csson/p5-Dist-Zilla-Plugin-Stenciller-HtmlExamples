@@ -9,15 +9,30 @@ Revision history for Dist-Zilla-Plugin-Stenciller-HtmlExamples
 
  [Enhancements]
 
- [Meta]
-
  [New Features]
+
+ [Other Changes]
 
  [Requirements]
 
- [Revision]
-
  [Testing]
+
+0.0102 2016-01-10T15:34:21Z UTC
+ [Bug Fixes]
+ - Fixed failing test when used with latest Stenciller version (fixes #1).
+
+ [Documentation]
+ - Improved documentation.
+
+ [Other Changes]
+ - Regenerated dist.ini and weaver.ini from latest
+   Dist::Iller::Config::Author::CSSON.
+
+ [Requirements]
+ - Bump Stenciller requirement to 0.1302, due to a change in
+   Stenciller::Plugin::ToHtmlPreBlock output.
+ - New requirements: MooseX::AttributeDocumented, String::Stomp and
+   Syntax::Feature::Qs.
 
 0.0101 2015-11-23T15:27:02Z UTC
  [Enhancements]
@@ -28,3 +43,4 @@ Revision history for Dist-Zilla-Plugin-Stenciller-HtmlExamples
 
 0.0100 2015-11-23T00:33:45Z UTC
  - Initial release
+
