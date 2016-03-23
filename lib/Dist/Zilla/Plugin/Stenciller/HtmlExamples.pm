@@ -6,7 +6,7 @@ package Dist::Zilla::Plugin::Stenciller::HtmlExamples;
 
 # ABSTRACT: Create Html example files from text files parsed with Stenciller
 # AUTHORITY
-our $VERSION = '0.0201';
+our $VERSION = '0.0202';
 
 use Moose;
 with 'Dist::Zilla::Role::FileGatherer';
