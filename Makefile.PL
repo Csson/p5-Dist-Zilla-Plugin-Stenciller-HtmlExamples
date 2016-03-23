@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.014000;
+use 5.010000;
 
 use ExtUtils::MakeMaker;
 
@@ -14,17 +14,19 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "Dist-Zilla-Plugin-Stenciller-HtmlExamples",
   "LICENSE" => "perl",
-  "MIN_PERL_VERSION" => "5.014000",
+  "MIN_PERL_VERSION" => "5.010000",
   "NAME" => "Dist::Zilla::Plugin::Stenciller::HtmlExamples",
   "PREREQ_PM" => {
     "Dist::Zilla::File::InMemory" => 0,
-    "Moose" => "2.1400",
-    "MooseX::AttributeDocumented" => 0,
-    "Path::Tiny" => 0,
-    "Stenciller" => "0.1302",
+    "Moose" => "2.1405",
+    "MooseX::AttributeDocumented" => "0.1003",
+    "Path::Tiny" => "0.072",
+    "Stenciller" => "0.1400",
     "String::Stomp" => 0,
     "Syntax::Feature::Qs" => "0.2004",
-    "namespace::autoclean" => "0.18",
+    "Types::Path::Tiny" => "0.005",
+    "Types::Standard" => "1.000005",
+    "namespace::autoclean" => "0.22",
     "syntax" => 0
   },
   "TEST_REQUIRES" => {
@@ -33,7 +35,7 @@ my %WriteMakefileArgs = (
     "File::Temp" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
-    "Path::Tiny" => 0,
+    "Path::Tiny" => "0.072",
     "String::Cushion" => 0,
     "Syntax::Feature::Qi" => 0,
     "Test::DZil" => 0,
@@ -41,7 +43,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.96",
     "syntax" => 0
   },
-  "VERSION" => "0.0200",
+  "VERSION" => "0.0201",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -55,10 +57,10 @@ my %FallbackPrereqs = (
   "File::Temp" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
-  "Moose" => "2.1400",
-  "MooseX::AttributeDocumented" => 0,
-  "Path::Tiny" => 0,
-  "Stenciller" => "0.1302",
+  "Moose" => "2.1405",
+  "MooseX::AttributeDocumented" => "0.1003",
+  "Path::Tiny" => "0.072",
+  "Stenciller" => "0.1400",
   "String::Cushion" => 0,
   "String::Stomp" => 0,
   "Syntax::Feature::Qi" => 0,
@@ -66,7 +68,9 @@ my %FallbackPrereqs = (
   "Test::DZil" => 0,
   "Test::Differences" => 0,
   "Test::More" => "0.96",
-  "namespace::autoclean" => "0.18",
+  "Types::Path::Tiny" => "0.005",
+  "Types::Standard" => "1.000005",
+  "namespace::autoclean" => "0.22",
   "syntax" => 0
 );
 

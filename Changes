@@ -4,6 +4,7 @@ Revision history for Dist-Zilla-Plugin-Stenciller-HtmlExamples
  [API Changes]
 
  [Bug Fixes]
+  - Fix compatibility with latest Stenciller (0.1400) (fixes #2).
 
  [Documentation]
 
@@ -14,6 +15,7 @@ Revision history for Dist-Zilla-Plugin-Stenciller-HtmlExamples
  [Other Changes]
 
  [Requirements]
+  - Perl requirement lowered to 5.10 (from 5.14).
 
  [Testing]
 

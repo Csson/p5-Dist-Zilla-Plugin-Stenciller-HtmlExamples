@@ -2,11 +2,19 @@
 
 Dist::Zilla::Plugin::Stenciller::HtmlExamples - Create Html example files from text files parsed with Stenciller
 
-![Requires Perl 5.14+](https://img.shields.io/badge/perl-5.14+-brightgreen.svg) [![Travis status](https://api.travis-ci.org/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples.svg?branch=master)](https://travis-ci.org/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples) ![coverage 98.3%](https://img.shields.io/badge/coverage-98.3%-yellow.svg)
+<div>
+    <p>
+    <img src="https://img.shields.io/badge/perl-5.10+-blue.svg" alt="Requires Perl 5.10+" />
+    <a href="https://travis-ci.org/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples"><img src="https://api.travis-ci.org/Csson/p5-Dist-Zilla-Plugin-Stenciller-HtmlExamples.svg?branch=master" alt="Travis status" /></a>
+    <a href="http://cpants.cpanauthors.org/dist/Dist-Zilla-Plugin-Stenciller-HtmlExamples-0.0201"><img src="https://badgedepot.code301.com/badge/kwalitee/Dist-Zilla-Plugin-Stenciller-HtmlExamples/0.0201" alt="Distribution kwalitee" /></a>
+    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-Stenciller-HtmlExamples%200.0201"><img src="https://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-Plugin-Stenciller-HtmlExamples/0.0201" alt="CPAN Testers result" /></a>
+    <img src="https://img.shields.io/badge/coverage-98.5%-yellow.svg" alt="coverage 98.5%" />
+    </p>
+</div>
 
 # VERSION
 
-Version 0.0200, released 2016-01-27.
+Version 0.0201, released 2016-03-23.
 
 # SYNOPSIS
 
