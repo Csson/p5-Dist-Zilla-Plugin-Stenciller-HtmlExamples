@@ -4,8 +4,9 @@ use warnings;
 
 package Dist::Zilla::Plugin::Stenciller::HtmlExamples;
 
-# VERSION
 # ABSTRACT: Create Html example files from text files parsed with Stenciller
+# AUTHORITY
+our $VERSION = '0.0201';
 
 use Moose;
 with 'Dist::Zilla::Role::FileGatherer';
