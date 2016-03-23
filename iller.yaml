@@ -4,6 +4,8 @@ doctype: dist
 header:
   name: Dist-Zilla-Plugin-Stenciller-HtmlExamples
 
+add_prereqs_as_authordeps: 1
+
 prereqs:
   runtime:
     requires:
