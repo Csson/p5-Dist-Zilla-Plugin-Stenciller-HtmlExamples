@@ -7,14 +7,16 @@ header:
 prereqs:
   runtime:
     requires:
-      - perl: 5.014000
-      - Stenciller: 0.1302
+      - perl: 5.010000
+      - Stenciller: 0.1400
+      - Types::Standard
+      - Types::Path::Tiny
       - Dist::Zilla::File::InMemory
       - syntax
       - Syntax::Feature::Qs: 0.2004
       - String::Stomp
-      - Moose: 2.1400
-      - namespace::autoclean: 0.18
+      - Moose
+      - namespace::autoclean
       - Path::Tiny
       - MooseX::AttributeDocumented
 
