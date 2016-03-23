@@ -1,4 +1,4 @@
-use 5.10.1;
+use 5.10.0;
 use strict;
 use warnings;
 
@@ -10,6 +10,8 @@ package Dist::Zilla::Plugin::Stenciller::HtmlExamples;
 use Moose;
 with 'Dist::Zilla::Role::FileGatherer';
 use Stenciller;
+use Types::Standard qw/Bool Maybe Str/;
+use Types::Path::Tiny qw/AbsFile Dir Path/;
 use Types::Stenciller -types;
 use Path::Tiny;
 use Dist::Zilla::File::InMemory;
